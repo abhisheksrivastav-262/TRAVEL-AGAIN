@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -21,13 +22,19 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 pb-[88px] sm:pb-14">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           <div className="col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#F5B800] flex items-center justify-center font-black text-black text-xs">WGA</div>
-              <div>
-                <div className="font-display font-bold text-white leading-none">WILD GREEN <span className="text-[#F5B800]">ADVENTURE</span></div>
-                <div className="text-[9px] tracking-[0.2em] text-emerald-400 font-bold mt-1">TRAVEL &amp; HOTEL BOOKING</div>
-              </div>
-            </div>
+            <Link href="/" aria-label="Wild Green Adventure home" className="mb-4 inline-flex items-center gap-2.5">
+              <Image
+                src="/wild-green-adventure-logo.png"
+                width={1254}
+                height={1254}
+                alt="Wild Green Adventure"
+                sizes="160px"
+                className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+              />
+              <span className="font-display text-sm font-extrabold leading-tight tracking-wide text-white sm:text-base">
+                WILD GREEN <span className="text-[#B7F000]">ADVENTURE</span>
+              </span>
+            </Link>
             <p className="text-sm leading-relaxed text-zinc-400 max-w-xs">
               Complete Travel and Hotel Booking services across North Bengal, Darjeeling, Kalimpong &amp; Dooars. Premium cabs, sightseeing packages, jungle safaris &amp; resort stays.
             </p>

@@ -1,6 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -15,38 +16,28 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] py-3"
-          : "bg-gradient-to-b from-black/40 to-transparent py-5 lg:py-6"
-      }`}
+      className="fixed top-0 w-full z-50 bg-[#073b2a]/95 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)] py-2.5 sm:py-3"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-xs transition-all ${scrolled ? "bg-[#1B4332] text-[#F5B800]" : "bg-[#F5B800] text-black shadow-gold"}`}>
-            <span className="tracking-tight font-extrabold">WGA</span>
-          </div>
-          <div>
-            <div className={`font-display font-bold leading-none tracking-tight text-[17px] sm:text-[19px] flex items-center gap-1.5 ${scrolled ? "text-[#0a0a0a]" : "text-white"}`}>
-              <span>WILD GREEN</span><span className="text-[#F5B800]">ADVENTURE</span>
-            </div>
-            <div className={`text-[8.5px] tracking-[0.2em] font-bold mt-0.5 ${scrolled ? "text-emerald-700" : "text-emerald-300"}`}>
-              TRAVEL &amp; HOTEL BOOKING
-            </div>
-          </div>
+        <Link href="/" aria-label="Wild Green Adventure home" className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2.5 group">
+          <Image
+            src="/wild-green-adventure-logo.png"
+            width={1254}
+            height={1254}
+            alt="Wild Green Adventure"
+            priority
+            sizes="(max-width: 640px) 48px, 64px"
+            className="h-12 w-12 object-contain transition-transform group-hover:scale-105 sm:h-16 sm:w-16"
+          />
+          <span className="font-display text-[12px] font-extrabold leading-tight tracking-wide text-white sm:text-base">
+            WILD GREEN <span className="text-[#B7F000]">ADVENTURE</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -59,11 +50,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3.5 py-2 rounded-full text-sm font-medium transition-all ${
                   active
-                    ? scrolled
-                      ? "bg-[#F5B800] text-black"
-                      : "bg-white text-black"
-                    : scrolled
-                    ? "text-zinc-700 hover:bg-zinc-100"
+                    ? "bg-[#B7F000] text-[#073b2a]"
                     : "text-white/90 hover:bg-white/15 hover:text-white"
                 }`}
               >
@@ -77,7 +64,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="tel:7319068773"
-            className={`hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border transition ${scrolled ? "border-zinc-200 text-zinc-800 hover:bg-zinc-50" : "border-white/30 text-white hover:bg-white/10"}`}
+            className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border border-white/30 text-white hover:bg-white/10 transition"
           >
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
             7319068773
@@ -85,7 +72,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className={`lg:hidden w-11 h-11 rounded-full flex flex-col items-center justify-center gap-1.5 transition ${scrolled ? "bg-zinc-900 text-white" : "bg-white text-black"}`}
+            className="lg:hidden w-11 h-11 rounded-full bg-white text-[#073b2a] flex flex-col items-center justify-center gap-1.5 transition"
             aria-label="Menu"
           >
             <span className={`w-5 h-0.5 bg-current transition ${open ? "rotate-45 translate-y-1" : ""}`} />
