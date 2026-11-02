@@ -35,7 +35,7 @@ export default function Home() {
           <div className="relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/cars/innova.jpg"
+              src="/cars/traveller.jpg"
               alt="Wild Green Adventure Tour"
               className="rounded-[20px] sm:rounded-[24px] object-cover w-full h-[320px] sm:h-[430px] shadow-premium"
             />
@@ -148,7 +148,7 @@ export default function Home() {
                 t: "Kalimpong Sightseeing",
                 d: "Explore Deolo Hill, Durpin Monastery, cactus nurseries, and tranquil retreats of Lava & Rishyap.",
                 tag: "SIGHTSEEING",
-                img: "/cars/innova.jpg",
+                img: "/cars/dzire.jpg",
               },
               {
                 t: "Bagdogra Airport & NJP Pickup",
@@ -160,7 +160,7 @@ export default function Home() {
                 t: "Complete Holiday Combo Packages",
                 d: "Customized cab + hotel packages tailored for families, couples, honeymoons, and college group tours.",
                 tag: "COMBO PACKAGES",
-                img: "/cars/traveller.jpg",
+                img: "/cars/ertiga.jpg",
               },
             ].map((s) => (
               <div
