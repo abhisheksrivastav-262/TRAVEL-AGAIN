@@ -24,12 +24,12 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" aria-label="Wild Green Adventure home" className="mb-4 inline-flex items-center gap-2.5">
               <Image
-                src="/wild-green-adventure-logo.png"
+                src="/wild-green-adventure-logo-v2.png"
                 width={1254}
                 height={1254}
                 alt="Wild Green Adventure"
-                sizes="160px"
-                className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+                sizes="(max-width: 640px) 112px, 128px"
+                className="h-28 w-28 object-contain sm:h-32 sm:w-32"
               />
               <span className="font-display text-sm font-extrabold leading-tight tracking-wide text-white sm:text-base">
                 WILD GREEN <span className="text-[#B7F000]">ADVENTURE</span>

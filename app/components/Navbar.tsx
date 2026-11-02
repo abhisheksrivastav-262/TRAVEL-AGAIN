@@ -27,13 +27,13 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" aria-label="Wild Green Adventure home" className="flex min-w-0 shrink-0 items-center gap-1.5 sm:gap-2.5 group">
           <Image
-            src="/wild-green-adventure-logo.png"
+            src="/wild-green-adventure-logo-v2.png"
             width={1254}
             height={1254}
             alt="Wild Green Adventure"
             priority
-            sizes="(max-width: 640px) 48px, 64px"
-            className="h-12 w-12 object-contain transition-transform group-hover:scale-105 sm:h-16 sm:w-16"
+            sizes="(max-width: 640px) 64px, 76px"
+            className="h-16 w-16 object-contain transition-transform group-hover:scale-105 sm:h-[76px] sm:w-[76px]"
           />
           <span className="font-display text-[12px] font-extrabold leading-tight tracking-wide text-white sm:text-base">
             WILD GREEN <span className="text-[#B7F000]">ADVENTURE</span>

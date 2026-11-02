@@ -33,6 +33,20 @@ const VEHICLES = {
   },
 } as const;
 
+const HOTEL_AREAS = [
+  "Sittong",
+  "Ronghu",
+  "Daragaw",
+  "Echagaw",
+  "Ramdhura",
+  "Kolakham",
+  "Reshop",
+  "Panbu",
+  "Kafer Gaw",
+  "Mim",
+  "Lava",
+];
+
 export default function BookingForm({ variant = "hero", title }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -45,6 +59,7 @@ export default function BookingForm({ variant = "hero", title }: Props) {
     time: "",
     rideType: "Darjeeling Hill Tour",
     hotelType: "Scenic Mountain View Resort / Hotel",
+    otherHotelArea: "",
     passengers: "2",
     rooms: "1 Room",
     vehicle: "Innova" as keyof typeof VEHICLES,
@@ -61,6 +76,9 @@ export default function BookingForm({ variant = "hero", title }: Props) {
     const e: Record<string, string> = {};
     if (!form.pickup) e.pickup = "Required";
     if (!form.drop) e.drop = "Required";
+    if (serviceCategory !== "travel" && form.drop === "Other offbeat location" && !form.otherHotelArea.trim()) {
+      e.otherHotelArea = "Please enter your preferred offbeat location";
+    }
     if (!form.date) e.date = "Required";
     if (variant === "full") {
       if (!form.name) e.name = "Required";
@@ -84,7 +102,8 @@ export default function BookingForm({ variant = "hero", title }: Props) {
           ? "Hotel & Resort Booking"
           : "Travel + Hotel Combo Package";
 
-      const msg = `Hello Wild Green Adventure!%0A%0A*New Booking Enquiry*%0A------------------------%0A• Service: ${catLabel}%0A• From: ${form.pickup}%0A• Destination: ${form.drop}%0A• Start Date: ${form.date}${form.returnDate ? `%0A• Return Date: ${form.returnDate}` : ""}%0A• Tour / Ride: ${form.rideType}%0A${serviceCategory !== "hotel" ? `• Selected Vehicle: ${selected.name}` : ""}%0A${serviceCategory !== "travel" ? `• Stay Preference: ${form.hotelType}%0A• Rooms: ${form.rooms}` : ""}%0A• Total Travellers: ${form.passengers}%0A• Contact Name: ${form.name || "Guest"}%0A• Phone: ${form.phone || "Provided on call"}%0A${form.notes ? `• Note: ${form.notes}` : ""}`;
+      const destination = form.drop === "Other offbeat location" ? `${form.otherHotelArea} (Offbeat location)` : form.drop;
+      const msg = `Hello Wild Green Adventure!%0A%0A*New Booking Enquiry*%0A------------------------%0A• Service: ${catLabel}%0A• From: ${form.pickup}%0A• Destination: ${destination}%0A• Start Date: ${form.date}${form.returnDate ? `%0A• Return Date: ${form.returnDate}` : ""}%0A• Tour / Ride: ${form.rideType}%0A${serviceCategory !== "hotel" ? `• Selected Vehicle: ${selected.name}` : ""}%0A${serviceCategory !== "travel" ? `• Stay Preference: ${form.hotelType}%0A• Rooms: ${form.rooms}` : ""}%0A• Total Travellers: ${form.passengers}%0A• Contact Name: ${form.name || "Guest"}%0A• Phone: ${form.phone || "Provided on call"}%0A${form.notes ? `• Note: ${form.notes}` : ""}`;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any)._lastBookingMsg = msg;
     }, 800);
@@ -187,13 +206,34 @@ export default function BookingForm({ variant = "hero", title }: Props) {
           </label>
           <div className="relative">
             <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 text-xs">◉</span>
-            <input
-              value={form.drop}
-              onChange={(e) => setForm({ ...form, drop: e.target.value })}
-              placeholder="e.g. Darjeeling / Kalimpong / Lataguri Dooars"
-              className={`${inputBase} pl-9 ${errors.drop ? "border-red-400 bg-red-50" : ""}`}
-            />
+            {serviceCategory === "travel" ? (
+              <input
+                value={form.drop}
+                onChange={(e) => setForm({ ...form, drop: e.target.value })}
+                placeholder="e.g. Darjeeling / Kalimpong / Lataguri Dooars"
+                className={`${inputBase} pl-9 ${errors.drop ? "border-red-400 bg-red-50" : ""}`}
+              />
+            ) : (
+              <select
+                value={form.drop}
+                onChange={(e) => setForm({ ...form, drop: e.target.value, otherHotelArea: "" })}
+                className={`${inputBase} pl-9 ${errors.drop ? "border-red-400 bg-red-50" : ""}`}
+              >
+                <option value="">Select preferred hotel area</option>
+                {HOTEL_AREAS.map((area) => <option key={area} value={area}>{area}</option>)}
+                <option value="Other offbeat location">Other offbeat location</option>
+              </select>
+            )}
           </div>
+          {serviceCategory !== "travel" && form.drop === "Other offbeat location" && (
+            <input
+              value={form.otherHotelArea}
+              onChange={(e) => setForm({ ...form, otherHotelArea: e.target.value })}
+              placeholder="Enter your preferred offbeat location"
+              className={`${inputBase} mt-2 ${errors.otherHotelArea ? "border-red-400 bg-red-50" : ""}`}
+            />
+          )}
+          {errors.otherHotelArea && <span className="text-xs text-red-500 mt-1 block">{errors.otherHotelArea}</span>}
           {errors.drop && <span className="text-xs text-red-500 mt-1 block">{errors.drop}</span>}
         </div>
 
@@ -338,10 +378,10 @@ export default function BookingForm({ variant = "hero", title }: Props) {
           </div>
         </div>
       ) : (
-        <div className="mt-3.5 w-full bg-amber-50 border border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between">
+        <div className="mt-3.5 w-full bg-amber-50 border border-amber-200 rounded-2xl p-3 sm:p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <div className="text-xs font-bold text-amber-900">VERIFIED HOTEL &amp; RESORT STAYS</div>
-            <div className="text-[11px] text-amber-700 mt-0.5">Darjeeling, Kalimpong, Dooars Lataguri &amp; Forest Cottages</div>
+            <div className="text-xs font-bold text-amber-900">HOTELS IN OFFBEAT LOCATIONS</div>
+            <div className="text-[11px] text-amber-700 mt-0.5">Sittong, Ronghu, Daragaw, Echagaw, Ramdhura, Kolakham, Reshop, Panbu, Kafer Gaw, Mim &amp; Lava</div>
           </div>
           <span className="text-xs bg-white border border-amber-300 px-2.5 py-1 rounded-full font-bold text-black">Instant Desk</span>
         </div>
