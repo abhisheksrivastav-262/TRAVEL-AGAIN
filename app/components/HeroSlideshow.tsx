@@ -7,10 +7,6 @@ const slides = [
   { url: "/cars/traveller.jpg", title: "Luxury Tempo Traveller for Group Tours" },
   { url: "/cars/ertiga.jpg", title: "Maruti Ertiga for Family Travel" },
   { url: "/cars/dzire.jpg", title: "Comfortable Sedan for Hills & Airport" },
-  { url: "/cars/car-6.jpg", title: "Kalimpong Hill Drive" },
-  { url: "/cars/car-7.jpg", title: "Dooars Jungle Safari Trip" },
-  { url: "/cars/car-8.jpg", title: "Darjeeling Tea Garden Route" },
-  { url: "/cars/car-11.jpg", title: "Hotel & Resort Booking Services" },
 ];
 
 export default function HeroSlideshow() {

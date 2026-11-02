@@ -77,18 +77,11 @@ export default function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="tel:7319068773"
-            className={`hidden md:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border transition ${scrolled ? "border-zinc-200 text-zinc-800 hover:bg-zinc-50" : "border-white/30 text-white hover:bg-white/10"}`}
+            className={`hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border transition ${scrolled ? "border-zinc-200 text-zinc-800 hover:bg-zinc-50" : "border-white/30 text-white hover:bg-white/10"}`}
           >
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
             7319068773
           </a>
-          <Link
-            href="/book"
-            className="inline-flex items-center gap-1.5 bg-[#F5B800] hover:bg-[#E6AC00] text-black font-bold text-sm px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-gold transition-all hover:scale-[1.02] active:scale-95 whitespace-nowrap"
-          >
-            <span className="hidden sm:inline">Book Travel &amp; Hotel</span><span className="sm:hidden">Book Now</span>
-            <span className="hidden sm:inline">→</span>
-          </Link>
           {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}

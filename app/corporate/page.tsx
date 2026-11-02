@@ -7,7 +7,7 @@ export default function Corporate() {
     <div>
       <section className="relative h-[50vh] min-h-[380px] flex items-center bg-zinc-900 overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cars/car-7.jpg" alt="Corporate & Group Travel" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <img src="/cars/traveller.jpg" alt="Corporate & Group Travel" className="absolute inset-0 w-full h-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-transparent" />
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-[#F5B800] font-bold tracking-[0.2em] text-xs mb-3 uppercase">

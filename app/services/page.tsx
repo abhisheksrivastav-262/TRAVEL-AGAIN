@@ -10,7 +10,7 @@ const services = [
     category: "TRAVEL & CAB",
     title: "Darjeeling Hill Tours & Sightseeing",
     desc: "Iconic tours covering Tiger Hill sunrise, Batasia Loop, Himalayan Mountaineering Institute, Tea Gardens, Rock Garden & Mirik Lake in powerful SUVs.",
-    img: "/cars/car-6.jpg",
+    img: "/cars/innova.jpg",
     benefits: ["Mountain-Certified Drivers", "Tiger Hill 4 AM Pickup", "Clean Sanitized SUVs"],
     use: "Families, couples, sunrise photography tours",
   },
@@ -18,7 +18,7 @@ const services = [
     category: "HOTEL & RESORT",
     title: "Darjeeling Mountain View Hotels",
     desc: "Handpicked premium hotels and cozy boutique stays facing the snow-clad Kanchenjunga peak, near Mall Road or quiet pine valleys.",
-    img: "/cars/car-11.jpg",
+    img: "/cars/ertiga.jpg",
     benefits: ["Verified Properties", "Heater & Hot Water", "Guaranteed Best Rates"],
     use: "Honeymoon, relaxing holidays, family vacation",
   },
@@ -26,7 +26,7 @@ const services = [
     category: "SAFARI & WILDLIFE",
     title: "Dooars Jungle Safari & Forest Tours",
     desc: "Wildlife safari permits & forest resort transfers in Gorumara National Park, Jaldapara, Lataguri, Murti, Buxa Tiger Reserve and Chilapata.",
-    img: "/cars/car-7.jpg",
+    img: "/cars/traveller.jpg",
     benefits: ["Safari Permit Assistance", "4x4 Gypsy & SUV Rides", "Elephant & Rhino Sightings"],
     use: "Wildlife enthusiasts, nature lovers, adventure groups",
   },
@@ -34,7 +34,7 @@ const services = [
     category: "HOTEL & RESORT",
     title: "Dooars Jungle Resorts & Eco Cottages",
     desc: "Stay amidst tea plantations and dense forests in Lataguri, Murti, and Madarihat with campfire, ethnic tribal dance, and fresh local organic food.",
-    img: "/cars/car-1.jpg",
+    img: "/cars/dzire.jpg",
     benefits: ["Riverside Locations", "Bonfire & Tribal Dance", "Forest Boundary Views"],
     use: "Nature retreats, weekend escapes, group offsites",
   },
@@ -42,7 +42,7 @@ const services = [
     category: "TRAVEL & CAB",
     title: "Kalimpong, Lava & Rishyap Excursions",
     desc: "Peaceful hill tours to Deolo Hill, Durpin Monastery, flower nurseries, canopy walks in Lava, pine forests of Rishyap & Lolegaon hanging bridge.",
-    img: "/cars/car-8.jpg",
+    img: "/cars/innova.jpg",
     benefits: ["Panoramic Himalayan Views", "Serene Offbeat Routes", "Flexible Photo Stops"],
     use: "Peace seekers, trekkers, nature photographers",
   },
@@ -50,7 +50,7 @@ const services = [
     category: "TRANSFERS",
     title: "Bagdogra Airport (IXB) & NJP Transfers",
     desc: "Punctual, flight-aware airport pickups and NJP railway station transfers to Darjeeling, Kalimpong, Gangtok or Dooars forest resorts.",
-    img: "/cars/car-4.jpg",
+    img: "/cars/dzire.jpg",
     benefits: ["Flight Delay Tracking", "Meet & Greet Service", "No Surge Pricing"],
     use: "Incoming flights & train arrivals to North Bengal",
   },
@@ -58,7 +58,7 @@ const services = [
     category: "COMBO PACKAGE",
     title: "Complete Travel + Hotel Holiday Package",
     desc: "Tailored multi-day tour packages including dedicated private vehicle, verified hotel/resort stay with breakfast, sightseeing and safari coordination.",
-    img: "/cars/car-5.jpg",
+    img: "/cars/innova.jpg",
     benefits: ["All-in-One Booking", "Personalized Itinerary", "24/7 Travel Manager"],
     use: "Stress-free holidays for families & honeymooners",
   },
@@ -66,7 +66,7 @@ const services = [
     category: "GROUP TRAVEL",
     title: "Tempo Traveller for Group Tours",
     desc: "12-16 seater luxury mini-buses with pushback seats and extra luggage space for extended family reunions, college trips and corporate offsites.",
-    img: "/cars/car-3.jpg",
+    img: "/cars/ertiga.jpg",
     benefits: ["Pushback Seats", "Huge Luggage Space", "Full Group Together"],
     use: "School/college tours, corporate retreats, big families",
   },
@@ -77,7 +77,7 @@ export default function Services() {
     <div>
       <section className="relative h-[48vh] min-h-[360px] flex items-center bg-black overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cars/car-9.jpg" alt="Services" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <img src="/cars/dzire.jpg" alt="Services" className="absolute inset-0 w-full h-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-[#F5B800] font-bold tracking-[0.2em] text-xs mb-3 uppercase">

@@ -10,7 +10,7 @@ export default function LocalTaxi() {
     <div>
       <section className="relative h-[52vh] min-h-[400px] flex items-center bg-black overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cars/car-6.jpg" alt="Local Taxi Darjeeling" className="absolute inset-0 w-full h-full object-cover opacity-65" />
+        <img src="/cars/innova.jpg" alt="Local Taxi Darjeeling" className="absolute inset-0 w-full h-full object-cover opacity-65" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-black/30" />
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-[#F5B800] text-xs font-extrabold uppercase tracking-widest mb-2">

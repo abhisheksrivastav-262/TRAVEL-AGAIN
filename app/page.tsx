@@ -130,37 +130,37 @@ export default function Home() {
                 t: "Darjeeling Hill Tours",
                 d: "Sunrise at Tiger Hill, Batasia Loop, Ghoom Monastery, tea garden walks & Rock Garden with mountain SUVs.",
                 tag: "TRAVEL / CAB",
-                img: "/cars/car-6.jpg",
+                img: "/cars/innova.jpg",
               },
               {
                 t: "Dooars Jungle Safari & Transfers",
                 d: "Wildlife safari tours in Gorumara, Jaldapara, Lataguri & Chilapata. Watch rhinos, elephants & rare birds.",
                 tag: "WILDLIFE / SAFARI",
-                img: "/cars/car-7.jpg",
+                img: "/cars/traveller.jpg",
               },
               {
                 t: "Hotel & Resort Bookings",
                 d: "Verified luxury resorts, mountain-view boutique hotels in Darjeeling & serene eco-cottages across Dooars.",
                 tag: "HOTEL BOOKING",
-                img: "/cars/car-11.jpg",
+                img: "/cars/ertiga.jpg",
               },
               {
                 t: "Kalimpong Sightseeing",
                 d: "Explore Deolo Hill, Durpin Monastery, cactus nurseries, and tranquil retreats of Lava & Rishyap.",
                 tag: "SIGHTSEEING",
-                img: "/cars/car-8.jpg",
+                img: "/cars/innova.jpg",
               },
               {
                 t: "Bagdogra Airport & NJP Pickup",
                 d: "Reliable airport and railway station pickup and drop to any North Bengal hill station or Dooars forest stay.",
                 tag: "TRANSFERS",
-                img: "/cars/car-4.jpg",
+                img: "/cars/dzire.jpg",
               },
               {
                 t: "Complete Holiday Combo Packages",
                 d: "Customized cab + hotel packages tailored for families, couples, honeymoons, and college group tours.",
                 tag: "COMBO PACKAGES",
-                img: "/cars/car-5.jpg",
+                img: "/cars/traveller.jpg",
               },
             ].map((s) => (
               <div

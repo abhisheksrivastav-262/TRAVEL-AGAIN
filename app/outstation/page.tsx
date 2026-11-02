@@ -10,7 +10,7 @@ export default function Outstation() {
     <div>
       <section className="relative h-[52vh] min-h-[400px] flex items-center bg-black overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cars/car-5.jpg" alt="North Bengal Outstation" className="absolute inset-0 w-full h-full object-cover opacity-65" />
+        <img src="/cars/innova.jpg" alt="North Bengal Outstation" className="absolute inset-0 w-full h-full object-cover opacity-65" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-[#F5B800] font-bold tracking-[0.2em] text-xs mb-3 uppercase">OUTSTATION &amp; SIGHTSEEING CABS</div>

@@ -10,7 +10,7 @@ export default function About() {
     <div>
       <section className="relative h-[52vh] min-h-[380px] flex items-center overflow-hidden bg-black">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cars/car-8.jpg" alt="About Travel Again" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+        <img src="/cars/innova.jpg" alt="About Travel Again" className="absolute inset-0 w-full h-full object-cover opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-black/30" />
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="inline-flex bg-[#F5B800] text-black text-xs font-extrabold tracking-[0.15em] px-3.5 py-1 rounded-full mb-3 uppercase">
