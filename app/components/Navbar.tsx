@@ -36,15 +36,15 @@ export default function Navbar() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm transition-all ${scrolled ? "bg-[#1B4332] text-[#52B788]" : "bg-[#F5B800] text-black shadow-gold"}`}>
-            <span className="tracking-tighter font-extrabold text-sm">TA</span>
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-xs transition-all ${scrolled ? "bg-[#1B4332] text-[#F5B800]" : "bg-[#F5B800] text-black shadow-gold"}`}>
+            <span className="tracking-tight font-extrabold">WGA</span>
           </div>
           <div>
             <div className={`font-display font-bold leading-none tracking-tight text-[17px] sm:text-[19px] flex items-center gap-1.5 ${scrolled ? "text-[#0a0a0a]" : "text-white"}`}>
-              <span>TRAVEL</span><span className="text-[#F5B800]">AGAIN</span>
+              <span>WILD GREEN</span><span className="text-[#F5B800]">ADVENTURE</span>
             </div>
-            <div className={`text-[8.5px] tracking-[0.16em] font-bold mt-0.5 ${scrolled ? "text-emerald-700" : "text-emerald-300"}`}>
-              (WILD GREEN ADVENTURE)
+            <div className={`text-[8.5px] tracking-[0.2em] font-bold mt-0.5 ${scrolled ? "text-emerald-700" : "text-emerald-300"}`}>
+              TRAVEL &amp; HOTEL BOOKING
             </div>
           </div>
         </Link>

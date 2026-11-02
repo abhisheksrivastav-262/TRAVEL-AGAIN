@@ -5,7 +5,7 @@ export default function FloatingActions() {
       {/* Desktop floating */}
       <div className="hidden sm:flex fixed bottom-6 right-6 z-40 flex-col gap-3">
         <a
-          href="https://wa.me/917319068773?text=Hi%20Travel%20Again%20(Wild%20Green%20Adventure)%2C%20I%20want%20to%20enquire%20about%20Travel%20%26%20Hotel%20booking%20in%20North%20Bengal%2C%20Darjeeling%2C%20Kalimpong%20%26%20Dooars"
+          href="https://wa.me/917319068773?text=Hi%20Wild%20Green%20Adventure%2C%20I%20want%20to%20enquire%20about%20Travel%20%26%20Hotel%20booking%20in%20North%20Bengal%2C%20Darjeeling%2C%20Kalimpong%20%26%20Dooars"
           target="_blank"
           className="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_8px_25px_rgba(37,211,102,0.4)] flex items-center justify-center hover:scale-105 transition active:scale-95"
           aria-label="WhatsApp"
@@ -25,7 +25,7 @@ export default function FloatingActions() {
         <a href="tel:7319068773" className="flex-1 bg-zinc-900 text-white rounded-full py-3.5 text-center text-[14px] font-bold active:scale-[0.98] transition flex items-center justify-center gap-1.5">
           <span>☎</span> Call 7319068773
         </a>
-        <a href="https://wa.me/917319068773?text=Hi%20Travel%20Again%2C%20I%20want%20to%20book%20Travel%20%26%20Hotel%20in%20North%20Bengal" target="_blank" className="flex-1 bg-[#25D366] text-white rounded-full py-3.5 text-center text-[14px] font-bold active:scale-[0.98] transition flex items-center justify-center gap-1.5">
+        <a href="https://wa.me/917319068773?text=Hi%20Wild%20Green%20Adventure%2C%20I%20want%20to%20book%20Travel%20%26%20Hotel%20in%20North%20Bengal" target="_blank" className="flex-1 bg-[#25D366] text-white rounded-full py-3.5 text-center text-[14px] font-bold active:scale-[0.98] transition flex items-center justify-center gap-1.5">
           <span>✆</span> WhatsApp
         </a>
       </div>

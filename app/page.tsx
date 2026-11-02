@@ -12,7 +12,7 @@ export default function Home() {
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-black">
           {[
             ["Travel & Hotel Booking", "One-stop seamless booking"],
-            ["Mountain & Safari Cabs", "Innova, Scorpio, Ertiga & Dzire"],
+            ["Mountain & Safari Cabs", "Innova, Tempo Traveller, Ertiga & Dzire"],
             ["Verified Hotels & Resorts", "Darjeeling, Kalimpong & Dooars"],
             ["24/7 Local Support", "Call 7319068773 anytime"],
           ].map(([t, d]) => (
@@ -29,14 +29,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Travel Again (Wild Green Adventure) */}
+      {/* About Wild Green Adventure */}
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div className="relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/cars/car-11.jpg"
-              alt="Travel Again Wild Green Adventure Tour"
+              src="/cars/innova.jpg"
+              alt="Wild Green Adventure Tour"
               className="rounded-[20px] sm:rounded-[24px] object-cover w-full h-[320px] sm:h-[430px] shadow-premium"
             />
             <div className="absolute -bottom-6 -right-2 sm:right-6 bg-black text-white rounded-2xl p-5 sm:p-6 shadow-premium max-w-[270px] border border-zinc-800">
@@ -53,17 +53,17 @@ export default function Home() {
           </div>
           <div>
             <div className="text-emerald-700 font-bold tracking-[0.18em] text-xs mb-2 uppercase">
-              ABOUT TRAVEL AGAIN (WILD GREEN ADVENTURE)
+              ABOUT WILD GREEN ADVENTURE
             </div>
             <h2 className="font-display text-2xl sm:text-4xl font-bold leading-tight text-zinc-900">
               Your Complete Gateway to <br />
               <span className="text-[#D4A000]">North Bengal, Darjeeling &amp; Dooars</span>
             </h2>
             <p className="mt-4 text-zinc-600 leading-relaxed text-sm sm:text-base">
-              Welcome to <strong>Travel Again (Wild Green Adventure)</strong>. We specialize in comprehensive <strong>Travel and Hotel Booking</strong> services across the most picturesque destinations of Eastern India — the misty hills of <strong>Darjeeling</strong>, tranquil landscapes of <strong>Kalimpong</strong>, wildlife havens of <strong>Dooars</strong>, and central hubs of <strong>North Bengal</strong> (Siliguri, Bagdogra Airport &amp; NJP).
+              Welcome to <strong>Wild Green Adventure</strong>. We specialize in comprehensive <strong>Travel and Hotel Booking</strong> services across the most picturesque destinations of Eastern India — the misty hills of <strong>Darjeeling</strong>, tranquil landscapes of <strong>Kalimpong</strong>, wildlife havens of <strong>Dooars</strong>, and central hubs of <strong>North Bengal</strong> (Siliguri, Bagdogra Airport &amp; NJP).
             </p>
             <p className="mt-3 text-zinc-600 leading-relaxed text-sm">
-              Whether you need a reliable mountain SUV (Innova Crysta / Scorpio), family MPV (Ertiga), smooth sedan (Dzire), scenic tea-garden resort, forest eco-cottage, or complete personalized holiday itinerary — our local experts ensure hassle-free booking and unbeatable hospitality.
+              Whether you need a reliable mountain SUV (Toyota Innova), group minibus (Luxury Tempo Traveller), family MPV (Maruti Ertiga), smooth sedan (Dzire), scenic tea-garden resort, forest eco-cottage, or complete personalized holiday itinerary — our local experts ensure hassle-free booking and unbeatable hospitality.
             </p>
 
             <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4">
@@ -198,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected Vehicles - Clean, No vehicle numbers */}
+      {/* Selected Vehicles - Innova, Tempo Traveller, Ertiga, Dzire (No car rates) */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
@@ -209,21 +209,31 @@ export default function Home() {
               Only the Best Vehicles for Your Journey
             </h2>
             <p className="text-xs sm:text-sm text-zinc-500 mt-2">
-              Comfortable, well-maintained SUVs, MPVs &amp; Sedans driven by seasoned mountain drivers. All vehicles sanitized and inspected.
+              Comfortable, well-maintained SUVs, Tempo Travellers, MPVs &amp; Sedans driven by seasoned mountain drivers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
-                n: "Innova Crysta / Scorpio",
+                n: "Toyota Innova",
                 cat: "Hill & Jungle Safari SUV",
                 f: "Mountain Power • 6-7 Seater • Large Boot",
                 p: "6-7",
                 l: "4-5 Bags",
-                per: "from ₹20/km",
-                img: "/cars/car-10.jpg",
+                status: "Available on Enquiry",
+                img: "/cars/innova.jpg",
                 badge: "MOST POPULAR FOR HILLS",
+              },
+              {
+                n: "Luxury Tempo Traveller",
+                cat: "Group Holiday Tourer",
+                f: "Pushback Seats • Group Travel • Dooars Tour",
+                p: "12-16",
+                l: "10+ Bags",
+                status: "Available on Enquiry",
+                img: "/cars/traveller.jpg",
+                badge: "FOR BIG GROUPS",
               },
               {
                 n: "Maruti Ertiga",
@@ -231,7 +241,7 @@ export default function Home() {
                 f: "Spacious Interior • Rear AC • Family Choice",
                 p: "6",
                 l: "4 Bags",
-                per: "from ₹16/km",
+                status: "Available on Enquiry",
                 img: "/cars/ertiga.jpg",
                 badge: "FAMILY FAVOURITE",
               },
@@ -241,19 +251,9 @@ export default function Home() {
                 f: "Airport Transfers • Smooth Ride • Economical",
                 p: "4",
                 l: "2 Bags",
-                per: "from ₹12/km",
+                status: "Available on Enquiry",
                 img: "/cars/dzire.jpg",
                 badge: "AIRPORT & CITY",
-              },
-              {
-                n: "Luxury Tempo Traveller",
-                cat: "Group Holiday Tourer",
-                f: "Pushback Seats • Group Travel • Dooars Tour",
-                p: "12-16",
-                l: "10+ Bags",
-                per: "from ₹30/km",
-                img: "/cars/car-3.jpg",
-                badge: "FOR BIG GROUPS",
               },
             ].map((c) => (
               <div
@@ -274,8 +274,8 @@ export default function Home() {
                         <h3 className="font-display font-bold text-base sm:text-lg text-zinc-900">{c.n}</h3>
                         <p className="text-xs text-emerald-700 font-semibold mt-0.5">{c.cat}</p>
                       </div>
-                      <span className="bg-amber-100 text-amber-900 text-[11px] font-black px-2.5 py-1 rounded-full shrink-0">
-                        {c.per}
+                      <span className="bg-emerald-50 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 border border-emerald-100">
+                        {c.status}
                       </span>
                     </div>
                     <p className="text-[11px] text-zinc-500 mt-2">{c.f}</p>
@@ -294,7 +294,7 @@ export default function Home() {
                     href={`/book?vehicle=${c.n}`}
                     className="block text-center bg-black hover:bg-zinc-800 text-white py-3 rounded-full font-bold text-xs sm:text-sm min-h-[42px] flex items-center justify-center transition"
                   >
-                    Book {c.n}
+                    Enquire / Book {c.n}
                   </Link>
                 </div>
               </div>
@@ -306,13 +306,13 @@ export default function Home() {
               href="/fleet"
               className="inline-flex justify-center border border-zinc-200 bg-white px-6 py-3 rounded-full font-bold text-sm hover:bg-zinc-50 transition shadow-sm"
             >
-              View Fleet Details &amp; Pricing →
+              View Full Fleet Details →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* PER KM PRICING TABLE */}
+      {/* FLEET SPECIFICATION SECTION */}
       <PricingSection />
 
       {/* Popular Routes in North Bengal, Darjeeling & Dooars */}
@@ -376,7 +376,7 @@ export default function Home() {
                 Stay in Scenic Tea Gardens, Hill Resorts &amp; Jungle Cottages
               </h2>
               <p className="mt-3 text-white/80 text-sm sm:text-base leading-relaxed">
-                Looking for the perfect stay in <strong>Darjeeling</strong> with Kanchenjunga views, a tranquil tea bungalow in <strong>Kalimpong</strong>, or a riverside eco-resort in <strong>Dooars</strong>? We provide verified stays at guaranteed direct rates.
+                Looking for the perfect stay in <strong>Darjeeling</strong> with Kanchenjunga views, a tranquil tea bungalow in <strong>Kalimpong</strong>, or a riverside eco-resort in <strong>Dooars</strong>? Wild Green Adventure provides verified stays with personalized booking assistance.
               </p>
               <div className="mt-6 flex flex-wrap gap-2 text-xs">
                 <span className="bg-white/15 px-3 py-1.5 rounded-full">✓ Darjeeling Mountain View Hotels</span>
@@ -392,7 +392,7 @@ export default function Home() {
                   Book Hotel &amp; Resort →
                 </Link>
                 <a
-                  href="https://wa.me/917319068773?text=Hi%20Travel%20Again%2C%20I%20want%20to%20enquire%20about%20Hotel%20Booking%20in%20Darjeeling%20%2F%20Dooars"
+                  href="https://wa.me/917319068773?text=Hi%20Wild%20Green%20Adventure%2C%20I%20want%20to%20enquire%20about%20Hotel%20Booking%20in%20Darjeeling%20%2F%20Dooars"
                   target="_blank"
                   className="bg-white text-black px-7 py-3.5 rounded-full font-bold text-sm hover:bg-zinc-100 transition text-center min-h-[44px] flex items-center justify-center gap-1.5"
                 >
@@ -421,12 +421,12 @@ export default function Home() {
                 l: "Kolkata • Darjeeling Family Holiday",
               },
               {
-                q: "Travel Again organized our entire Dooars jungle safari and stay at Lataguri. We spotted rhinos at Gorumara and the resort food was amazing. Seamless experience!",
+                q: "Wild Green Adventure organized our entire Dooars jungle safari and stay at Lataguri. We spotted rhinos at Gorumara and the resort food was amazing. Seamless experience!",
                 n: "Pooja & Rohan Sen",
                 l: "Bangalore • Dooars Safari Trip",
               },
               {
-                q: "Best travel agency for North Bengal and Kalimpong. Transparent pricing, no hidden costs, and courteous driver. Highly recommend 7319068773 for anyone visiting hills.",
+                q: "Best travel agency for North Bengal and Kalimpong. Professional drivers and courteous service. Highly recommend 7319068773 for anyone visiting hills.",
                 n: "Sunil Chettri",
                 l: "Siliguri • Kalimpong & Lava Tour",
               },

@@ -7,37 +7,29 @@ type Props = {
 };
 
 const VEHICLES = {
-  Sedan: {
-    perKm: 12,
-    base: 300,
-    driver: 500,
-    label: "Swift Dzire (Sedan) — from ₹12/km",
-    name: "Swift Dzire (Sedan)",
-    sub: "Comfortable AC Sedan • 4 Passengers • City & Sightseeing",
-  },
-  Ertiga: {
-    perKm: 16,
-    base: 350,
-    driver: 500,
-    label: "Maruti Ertiga (MPV) — from ₹16/km",
-    name: "Maruti Ertiga (Family MPV)",
-    sub: "Spacious 6-7 Seater • Families & Extra Luggage",
-  },
   Innova: {
-    perKm: 20,
-    base: 450,
-    driver: 600,
-    label: "Innova Crysta / Scorpio (SUV) — from ₹20/km",
-    name: "Innova Crysta / Scorpio (Hill & Safari SUV)",
-    sub: "Premium Mountain Power • 6-7 Pax • Hill & Forest King",
+    name: "Toyota Innova (Hill & Safari SUV)",
+    category: "SUV • 6-7 Seater",
+    sub: "6-7 Passengers • 4-5 Bags • AC • High Ground Clearance",
+    ideal: "Darjeeling steep hills, Kalimpong scenic circuits & Dooars jungle safaris",
   },
   Traveller: {
-    perKm: 30,
-    base: 800,
-    driver: 800,
-    label: "Luxury Tempo Traveller — from ₹30/km",
     name: "Luxury Tempo Traveller (Group Tour)",
-    sub: "12-17 Passengers • Group Tours & Dooars Expeditions",
+    category: "Minibus • 12-16 Seater",
+    sub: "12-16 Passengers • Reclining Pushback Seats • Extra Luggage Bay",
+    ideal: "Extended family tours, corporate offsites, college groups & Dooars tour",
+  },
+  Ertiga: {
+    name: "Maruti Ertiga (Family MPV)",
+    category: "MPV • 6 Seater",
+    sub: "6 Passengers • 3-4 Bags • Dual AC • Comfortable Suspension",
+    ideal: "Family sightseeing, NJP & Bagdogra airport transfers",
+  },
+  Sedan: {
+    name: "Swift Dzire (Executive AC Sedan)",
+    category: "Sedan • 4 Seater",
+    sub: "4 Passengers • 2 Bags • Chilled AC • Smooth Ride",
+    ideal: "Couples, small families, Siliguri city & airport transfers",
   },
 } as const;
 
@@ -52,7 +44,7 @@ export default function BookingForm({ variant = "hero", title }: Props) {
     returnDate: "",
     time: "",
     rideType: "Darjeeling Hill Tour",
-    hotelType: "Scenic Hill Resort / Hotel",
+    hotelType: "Scenic Mountain View Resort / Hotel",
     passengers: "2",
     rooms: "1 Room",
     vehicle: "Innova" as keyof typeof VEHICLES,
@@ -64,8 +56,6 @@ export default function BookingForm({ variant = "hero", title }: Props) {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const selected = VEHICLES[form.vehicle] || VEHICLES.Innova;
-  const kmNum = parseInt(form.km) || 0;
-  const estimated = kmNum > 0 ? selected.perKm * kmNum + selected.base : null;
 
   const validate = () => {
     const e: Record<string, string> = {};
@@ -94,7 +84,7 @@ export default function BookingForm({ variant = "hero", title }: Props) {
           ? "Hotel & Resort Booking"
           : "Travel + Hotel Combo Package";
 
-      const msg = `Hello Travel Again (Wild Green Adventure)!%0A%0A*New Booking Enquiry*%0A------------------------%0A• Service: ${catLabel}%0A• From: ${form.pickup}%0A• Destination: ${form.drop}%0A• Start Date: ${form.date}${form.returnDate ? `%0A• Return Date: ${form.returnDate}` : ""}%0A• Time: ${form.time || "Flexible"}%0A• Tour / Ride: ${form.rideType}%0A${serviceCategory !== "hotel" ? `• Vehicle: ${selected.name}%0A• Est. Distance: ${form.km ? form.km + " km" : "On Enquiry"}` : ""}%0A${serviceCategory !== "travel" ? `• Stay Preference: ${form.hotelType}%0A• Rooms: ${form.rooms}` : ""}%0A• Guests / Pax: ${form.passengers}%0A• Contact Name: ${form.name || "Traveller"}%0A• Phone: ${form.phone || "Not provided"}%0A${form.notes ? `• Note: ${form.notes}` : ""}`;
+      const msg = `Hello Wild Green Adventure!%0A%0A*New Booking Enquiry*%0A------------------------%0A• Service: ${catLabel}%0A• From: ${form.pickup}%0A• Destination: ${form.drop}%0A• Start Date: ${form.date}${form.returnDate ? `%0A• Return Date: ${form.returnDate}` : ""}%0A• Tour / Ride: ${form.rideType}%0A${serviceCategory !== "hotel" ? `• Selected Vehicle: ${selected.name}` : ""}%0A${serviceCategory !== "travel" ? `• Stay Preference: ${form.hotelType}%0A• Rooms: ${form.rooms}` : ""}%0A• Total Travellers: ${form.passengers}%0A• Contact Name: ${form.name || "Guest"}%0A• Phone: ${form.phone || "Provided on call"}%0A${form.notes ? `• Note: ${form.notes}` : ""}`;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any)._lastBookingMsg = msg;
     }, 800);
@@ -106,15 +96,15 @@ export default function BookingForm({ variant = "hero", title }: Props) {
         <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto mb-4">✓</div>
         <h3 className="font-display text-2xl font-bold text-zinc-900">Enquiry Received Successfully!</h3>
         <p className="text-zinc-600 mt-3 text-sm leading-relaxed">
-          Thank you for choosing <strong>Travel Again (Wild Green Adventure)</strong>.<br />
-          Our North Bengal travel &amp; hotel desk will contact you immediately.<br />
+          Thank you for contacting <strong>Wild Green Adventure</strong>.<br />
+          Our North Bengal travel desk will check availability and get back to you immediately with the best quote.<br />
           For instant booking or urgent help, call us directly at <a href="tel:7319068773" className="font-bold text-black underline">7319068773</a>.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
           <a href="tel:7319068773" className="bg-black text-white px-6 py-3.5 rounded-full font-bold text-sm min-h-[44px] flex items-center justify-center">Call 7319068773</a>
           <a
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            href={`https://wa.me/917319068773?text=${(typeof window !== "undefined" && (window as any)._lastBookingMsg) || "Hi%20Travel%20Again%2C%20I%20want%20to%20book%20travel%20and%20hotel"}`}
+            href={`https://wa.me/917319068773?text=${(typeof window !== "undefined" && (window as any)._lastBookingMsg) || "Hi%20Wild%20Green%20Adventure%2C%20I%20want%20to%20book%20travel%20and%20hotel"}`}
             target="_blank"
             className="bg-[#25D366] text-white px-6 py-3.5 rounded-full font-bold text-sm min-h-[44px] flex items-center justify-center gap-1.5"
           >
@@ -255,17 +245,17 @@ export default function BookingForm({ variant = "hero", title }: Props) {
         {serviceCategory !== "hotel" && (
           <div>
             <label className="text-[11px] font-bold tracking-[0.12em] text-zinc-700 mb-1 block">
-              PREMIUM VEHICLE <span className="normal-case tracking-normal font-bold text-amber-700">(No Vehicle No. Listed)</span>
+              CHOOSE VEHICLE
             </label>
             <select
               value={form.vehicle}
               onChange={(e) => setForm({ ...form, vehicle: e.target.value as keyof typeof VEHICLES })}
               className={`${inputBase} font-bold bg-white`}
             >
-              <option value="Innova">Innova Crysta / Scorpio (Hill &amp; Safari SUV)</option>
-              <option value="Ertiga">Maruti Ertiga (Comfort Family MPV • 6-7 Pax)</option>
-              <option value="Sedan">Swift Dzire (Comfort AC Sedan • 4 Pax)</option>
-              <option value="Traveller">Luxury Tempo Traveller (Group 12-16 Pax)</option>
+              <option value="Innova">Toyota Innova (Mountain &amp; Safari SUV)</option>
+              <option value="Traveller">Luxury Tempo Traveller (12-16 Seater)</option>
+              <option value="Ertiga">Maruti Ertiga (Comfort Family MPV)</option>
+              <option value="Sedan">Swift Dzire (Executive AC Sedan)</option>
             </select>
           </div>
         )}
@@ -287,27 +277,6 @@ export default function BookingForm({ variant = "hero", title }: Props) {
               <option>Tea Garden Estate Bungalow</option>
               <option>Budget-Friendly Verified Hotel</option>
             </select>
-          </div>
-        )}
-
-        {/* Est. Distance (Only for Travel) */}
-        {serviceCategory === "travel" && (
-          <div>
-            <label className="text-[11px] font-bold tracking-[0.12em] text-zinc-500 mb-1 block">
-              EST. DISTANCE <span className="font-normal normal-case tracking-normal">(optional)</span>
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                inputMode="numeric"
-                value={form.km}
-                onChange={(e) => setForm({ ...form, km: e.target.value })}
-                placeholder="e.g. 80"
-                min={0}
-                className={`${inputBase} pr-12`}
-              />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-zinc-500 bg-zinc-100 px-2 py-1 rounded-full">KM</span>
-            </div>
           </div>
         )}
 
@@ -350,25 +319,23 @@ export default function BookingForm({ variant = "hero", title }: Props) {
         )}
       </div>
 
-      {/* Per-km vehicle info or Hotel package info */}
+      {/* Vehicle Info or Hotel package info (No Car Rates) */}
       {serviceCategory !== "hotel" ? (
-        <div className="mt-3.5 w-full bg-emerald-50/70 border border-emerald-200 rounded-2xl p-3 sm:p-3.5 flex flex-col gap-2">
+        <div className="mt-3.5 w-full bg-emerald-50/80 border border-emerald-200 rounded-2xl p-3 sm:p-3.5 flex flex-col gap-1.5">
           <div className="flex items-center justify-between gap-2">
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.1em] text-emerald-900 uppercase">
               {selected.name}
             </span>
-            <span className="text-xs bg-white border border-emerald-300 px-2.5 py-0.5 rounded-full font-black text-emerald-800 shrink-0">
-              from ₹{selected.perKm}/km
+            <span className="text-xs bg-white border border-emerald-300 px-2.5 py-0.5 rounded-full font-bold text-emerald-800 shrink-0">
+              {selected.category}
             </span>
           </div>
           <p className="text-[11px] text-zinc-600">{selected.sub}</p>
-          {estimated !== null && (
-            <div className="bg-black text-white rounded-xl px-3 py-2.5 flex items-center justify-between">
-              <span className="text-xs font-bold">Est. fare for {kmNum} km:</span>
-              <span className="font-black text-sm sm:text-base text-[#F5B800]">₹{estimated.toLocaleString("en-IN")}*</span>
-            </div>
-          )}
-          <p className="text-[10px] text-zinc-500 text-center">Transparent pricing • Hill permits, toll &amp; parking as applicable • Verified sanitized cars</p>
+          <p className="text-[10px] text-emerald-800 font-medium">✓ Ideal for: {selected.ideal}</p>
+          <div className="bg-white rounded-xl py-2 px-3 border border-emerald-100 flex items-center justify-between mt-0.5">
+            <span className="text-xs font-semibold text-zinc-700">Best Mountain &amp; Safari Rates:</span>
+            <span className="text-xs font-bold text-emerald-900">Get Instant Quote on Enquiry</span>
+          </div>
         </div>
       ) : (
         <div className="mt-3.5 w-full bg-amber-50 border border-amber-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between">
@@ -391,7 +358,7 @@ export default function BookingForm({ variant = "hero", title }: Props) {
             CHECKING AVAILABILITY...
           </>
         ) : (
-          <>ENQUIRE TRAVEL &amp; HOTEL BOOKING →</>
+          <>ENQUIRE NOW &amp; GET BEST QUOTE →</>
         )}
       </button>
 
@@ -403,7 +370,7 @@ export default function BookingForm({ variant = "hero", title }: Props) {
           CALL 7319068773
         </a>
         <a
-          href="https://wa.me/917319068773?text=Hi%20Travel%20Again%20(Wild%20Green%20Adventure)%2C%20I%20want%20to%20enquire%20about%20Travel%20and%20Hotel%20Booking"
+          href="https://wa.me/917319068773?text=Hi%20Wild%20Green%20Adventure%2C%20I%20want%20to%20enquire%20about%20Travel%20and%20Hotel%20Booking"
           target="_blank"
           className="text-center bg-[#25D366] text-white py-3 rounded-full text-xs font-bold hover:bg-[#20b858] transition min-h-[44px] flex items-center justify-center gap-1"
         >

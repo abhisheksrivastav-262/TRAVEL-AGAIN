@@ -25,13 +25,12 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: "Travel Again (Wild Green Adventure) | Travel & Hotel Booking in North Bengal, Darjeeling, Kalimpong & Dooars",
-    template: "%s | Travel Again (Wild Green Adventure)",
+    default: "Wild Green Adventure | Travel & Hotel Booking in North Bengal, Darjeeling, Kalimpong & Dooars",
+    template: "%s | Wild Green Adventure",
   },
   description:
-    "Complete Travel & Hotel Booking in North Bengal, Darjeeling, Kalimpong & Dooars. Premium cabs, sightseeing tours, resort stays & airport transfers. Call 7319068773.",
+    "Wild Green Adventure - Complete Travel & Hotel Booking in North Bengal, Darjeeling, Kalimpong & Dooars. Premium cabs, sightseeing tours, resort stays & airport transfers. Call 7319068773.",
   keywords: [
-    "Travel Again",
     "Wild Green Adventure",
     "Darjeeling Taxi Service",
     "Kalimpong Cab Booking",
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
     "Siliguri Car Rental",
   ],
   openGraph: {
-    title: "Travel Again (Wild Green Adventure) - Travel & Hotel Booking",
+    title: "Wild Green Adventure - Travel & Hotel Booking",
     description: "Your trusted travel & hotel booking partner in North Bengal, Darjeeling, Kalimpong & Dooars.",
     type: "website",
   },
@@ -68,7 +67,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "TravelAgency",
-              name: "Travel Again (Wild Green Adventure)",
+              name: "Wild Green Adventure",
               telephone: "+917319068773",
               address: {
                 "@type": "PostalAddress",
@@ -78,7 +77,6 @@ export default function RootLayout({
               },
               areaServed: ["North Bengal", "Darjeeling", "Kalimpong", "Dooars", "Siliguri", "Bagdogra"],
               serviceType: ["Cab Booking", "Hotel Booking", "Tour Packages", "Jungle Safari"],
-              priceRange: "₹₹",
             }),
           }}
         />

@@ -22,10 +22,10 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#F5B800] flex items-center justify-center font-black text-black text-sm">TA</div>
+              <div className="w-10 h-10 rounded-xl bg-[#F5B800] flex items-center justify-center font-black text-black text-xs">WGA</div>
               <div>
-                <div className="font-display font-bold text-white leading-none">TRAVEL <span className="text-[#F5B800]">AGAIN</span></div>
-                <div className="text-[9px] tracking-[0.16em] text-emerald-400 font-bold mt-1">(WILD GREEN ADVENTURE)</div>
+                <div className="font-display font-bold text-white leading-none">WILD GREEN <span className="text-[#F5B800]">ADVENTURE</span></div>
+                <div className="text-[9px] tracking-[0.2em] text-emerald-400 font-bold mt-1">TRAVEL &amp; HOTEL BOOKING</div>
               </div>
             </div>
             <p className="text-sm leading-relaxed text-zinc-400 max-w-xs">
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex gap-3">
               <a href="tel:7319068773" className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-[#F5B800] hover:text-black transition text-sm">☎</a>
-              <a href="https://wa.me/917319068773?text=Hi%20Travel%20Again%2C%20I%20want%20to%20enquire%20about%20Travel%20%26%20Hotel%20Booking" target="_blank" className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition text-sm">✆</a>
+              <a href="https://wa.me/917319068773?text=Hi%20Wild%20Green%20Adventure%2C%20I%20want%20to%20enquire%20about%20Travel%20%26%20Hotel%20Booking" target="_blank" className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition text-sm">✆</a>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <a href="tel:7319068773" className="block text-white font-bold text-xl hover:text-[#F5B800] transition">7319068773</a>
               <p className="text-zinc-400 leading-relaxed text-[13px]">
-                Travel Again (Wild Green Adventure)<br />
+                Wild Green Adventure<br />
                 North Bengal • Darjeeling • Kalimpong • Dooars<br />
                 West Bengal, India
               </p>
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between gap-4 text-xs text-zinc-500">
-          <p>© 2026 Travel Again (Wild Green Adventure). All Rights Reserved. North Bengal, Darjeeling, Kalimpong &amp; Dooars.</p>
+          <p>© 2026 Wild Green Adventure. All Rights Reserved. North Bengal, Darjeeling, Kalimpong &amp; Dooars.</p>
           <div className="flex gap-4">
             <span className="hover:text-zinc-300 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-zinc-300 cursor-pointer">Terms &amp; Conditions</span>

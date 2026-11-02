@@ -3,15 +3,13 @@ import { useState, useEffect } from "react";
 import BookingForm from "./BookingForm";
 
 const slides = [
-  { url: "/cars/car-1.jpg", title: "Travel in North Bengal" },
-  { url: "/cars/car-2.jpg", title: "Comfortable Sedan for Hills" },
-  { url: "/cars/car-3.jpg", title: "SUV for Darjeeling & Dooars" },
-  { url: "/cars/car-4.jpg", title: "Bagdogra Airport & NJP Pickup" },
-  { url: "/cars/car-5.jpg", title: "Wild Green Adventure Tour" },
+  { url: "/cars/innova.jpg", title: "Toyota Innova for Darjeeling & Dooars" },
+  { url: "/cars/traveller.jpg", title: "Luxury Tempo Traveller for Group Tours" },
+  { url: "/cars/ertiga.jpg", title: "Maruti Ertiga for Family Travel" },
+  { url: "/cars/dzire.jpg", title: "Comfortable Sedan for Hills & Airport" },
   { url: "/cars/car-6.jpg", title: "Kalimpong Hill Drive" },
   { url: "/cars/car-7.jpg", title: "Dooars Jungle Safari Trip" },
   { url: "/cars/car-8.jpg", title: "Darjeeling Tea Garden Route" },
-  { url: "/cars/car-10.jpg", title: "Premium Fleet for Mountain Journeys" },
   { url: "/cars/car-11.jpg", title: "Hotel & Resort Booking Services" },
 ];
 
@@ -56,9 +54,9 @@ export default function HeroSlideshow() {
             <span className="w-2 h-2 bg-[#F5B800] rounded-full animate-pulse" />
             NORTH BENGAL • DARJEELING • KALIMPONG • DOOARS
           </div>
-          <h1 className="font-display font-black text-[32px] sm:text-[50px] lg:text-[56px] leading-[1.0] sm:leading-[0.95] tracking-tight">
-            TRAVEL AGAIN<br />
-            <span className="text-[#F5B800] text-[24px] sm:text-[38px] lg:text-[42px] block font-extrabold tracking-normal mt-1">(WILD GREEN ADVENTURE)</span>
+          <h1 className="font-display font-black text-[34px] sm:text-[52px] lg:text-[60px] leading-[1.0] sm:leading-[0.95] tracking-tight">
+            WILD GREEN<br />
+            <span className="text-[#F5B800] text-[28px] sm:text-[44px] lg:text-[50px] block font-extrabold tracking-normal mt-1">ADVENTURE</span>
           </h1>
           <p className="mt-4 text-white/90 text-base sm:text-lg max-w-xl leading-relaxed font-medium">
             Complete <span className="text-[#F5B800] font-bold">Travel &amp; Hotel Booking</span> across North Bengal, Darjeeling, Kalimpong &amp; Dooars
